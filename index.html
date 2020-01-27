@@ -10,6 +10,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
+	<div class="preloader">
+		<div class="preloader_row">
+			<p class="preloader_name">HIRE ME</p>
+			<p class="preloader_item">Front-end Developer</p>
+		</div>
+	</div>
+	<script>
+		window.onload = function () {
+			document.body.classList.add('loaded_hiding');
+			window.setTimeout(function () {
+				document.body.classList.add('loaded');
+				document.body.classList.remove('loaded_hiding');
+			}, 500);
+		}
+	</script>
 	<div class="popup-wrapper">
 		<input type="checkbox" class="popup-checkbox" id="popupCheckboxOne">
 		<div class="popup">
