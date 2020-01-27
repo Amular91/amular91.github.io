@@ -60,6 +60,68 @@ a{
 	transition: 1s ease-out;
 	-webkit-transition: 1s ease-out;
 }
+/*preloader*/
+	.preloader{
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: white;
+		z-index: 1000;
+	}
+	.preloader_name{
+		font-family: "Quantico";
+		font-style: normal;
+		font-weight: bold;
+		font-size: 65px;
+		line-height: 100px;
+	}
+	.preloader_item{
+		font-family: "Montserrat";
+		font-style: normal;
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 20px;
+	}
+	.preloader_row{
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		left: 50%;
+		margin-left: -128px;
+		margin-top: -60px;
+		animation: preloader-rotate 1s linear infinite alternate;
+	}
+	@keyframes preloader-rotate{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	.loaded_hiding .preloader {
+		transition: 0.3s opacity;
+		opacity: 0;
+	}
+	.loaded .preloader {
+		display: none;
+	}
+	@media(min-width: 500px){
+		.preloader_row{
+			margin-left: -190px;
+			margin-top: -85px;
+		}
+		.preloader_name{
+			font-size: 96px;
+			line-height: 137px;
+		}
+		.preloader_item{
+			font-size: 32px;
+			line-height: 32px;
+		}
+	}
 /*firstScreen*/
 	nav{
 	    width: 90%;
