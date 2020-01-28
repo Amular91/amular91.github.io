@@ -57,11 +57,13 @@ a{
 }
 .mydiv {
 	position: relative;
+	-o-transition: 1s ease-out;
 	transition: 1s ease-out;
 	-webkit-transition: 1s ease-out;
 }
+
 /*preloader*/
-	.preloader{
+.preloader{
 		position: fixed;
 		left: 0;
 		top: 0;
@@ -91,7 +93,16 @@ a{
 		left: 50%;
 		margin-left: -128px;
 		margin-top: -60px;
-		animation: preloader-rotate 1s linear infinite alternate;
+		-webkit-animation: preloader-rotate 1s linear infinite alternate;
+		        animation: preloader-rotate 1s linear infinite alternate;
+	}
+	@-webkit-keyframes preloader-rotate{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
 	}
 	@keyframes preloader-rotate{
 		0%{
@@ -102,6 +113,8 @@ a{
 		}
 	}
 	.loaded_hiding .preloader {
+		-webkit-transition: 0.3s opacity;
+		-o-transition: 0.3s opacity;
 		transition: 0.3s opacity;
 		opacity: 0;
 	}
@@ -122,6 +135,7 @@ a{
 			line-height: 32px;
 		}
 	}
+
 /*firstScreen*/
 	nav{
 	    width: 90%;
@@ -154,28 +168,20 @@ a{
       display: block;
       text-transform: uppercase;
       -webkit-text-stroke: 2px var(--fill-color);
+      background: -webkit-gradient(linear, left top, right top, from(var(--fill-color)), to(var(--fill-color)));
+      background: -o-linear-gradient(left, var(--fill-color) 0%, var(--fill-color) 100%);
       background: linear-gradient(90deg, var(--fill-color) 0%, var(--fill-color) 100%);
       background-size: 0;
       background-position: left;
       background-repeat: no-repeat;
       color: transparent;
       -webkit-background-clip: text;
+      -webkit-transition: 1.5s linear;
+      -o-transition: 1.5s linear;
       transition: 1.5s linear;
 	}
 	.menu-item a:hover {
 		background-size: 100%;
-	}
-	.popup:before {
-	  display: block;
-	  content: ' ';
-	  position: absolute;
-	  z-index: 1;
-	  width: 100%;
-	  height: 100%;
-	  top: 0;
-	  left: 0;
-	  background-color: #000;
-	  opacity: .5;
 	}
 	.popup-content {
 	  position: absolute;
@@ -223,7 +229,9 @@ a{
 		width: 20px;
 		height: 1px;
 		background-color: black;
-		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		    -ms-transform: rotate(45deg);
+		        transform: rotate(45deg);
 		top: 50%;
 		right: 0;
 	}
@@ -233,7 +241,9 @@ a{
 		width: 20px;
 		height: 1px;
 		background-color: black;
-		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		    -ms-transform: rotate(-45deg);
+		        transform: rotate(-45deg);
 		top: 50%;
 		right: 0;
 	}
@@ -263,6 +273,8 @@ a{
 	}
 	.siteLanguage{
 		float: right;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 	}
 	.siteLanguage li{
@@ -306,9 +318,16 @@ a{
 		padding-top: 20px;
 	}
 	.contacts{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-	    align-items: flex-end;
-	    flex-direction: column;
+	    -webkit-box-align: end;
+	        -ms-flex-align: end;
+	            align-items: flex-end;
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+	        -ms-flex-direction: column;
+	            flex-direction: column;
 	    font-family: "Montserrat";
 		font-weight: 600;
 		font-size: 17px;
@@ -471,6 +490,8 @@ a{
 
 	}
 	footer ul{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 	}
 	footer li{
@@ -519,9 +540,13 @@ a{
 	.firstScreen{
 		background:url(../foto/MatyukhinAndreyDT.png);
 		background-size: cover;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-wrap: wrap;
-		align-content: space-between;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-ms-flex-line-pack: justify;
+		    align-content: space-between;
 		height: 100vh;
 	}
 	.contacts{
@@ -560,6 +585,8 @@ a{
 		padding: 0 15px 0 100px;
 	}
 	.wrapperForStudi{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 	}
 	.ForStudi{
@@ -590,7 +617,6 @@ a{
 	.myExperience{
 		padding: 0 0 75px 0px;
 	}
-
 }
 @media(min-width: 1200px){
 	h2{
