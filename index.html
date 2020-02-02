@@ -3,10 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>cv</title>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css" rel="stylesheet">
-
-	<link rel="stylesheet" type="text/css" href="style/style.css">
-
+	<link rel="stylesheet" href="style/owl.carousel.css">
+	<link rel="stylesheet" href="style/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
@@ -46,11 +44,11 @@
 							<h2>Мои скилы</h2>
 						</a>
 					</li>
-<!-- 					<li class="menu-item">
+					<li class="menu-item">
 						<a href="#fifthScreen">
 							<h2>Мои работы</h2>
 						</a>
-					</li> -->
+					</li>
 					<li class="menu-item">
 						<a href="#footer">
 							<h2>Контакты</h2>
@@ -60,7 +58,8 @@
 			</div>
 		</div>
 	</div>
-		<div class="firstScreen mydiv">
+	<div id="main">
+		<section class="firstScreen">
 				<nav class="clr">
 					<label for="popupCheckboxOne" class="popup-shower">
 						<p></p>
@@ -87,8 +86,8 @@
 					<p class="myName">Андрей <span>Матюхин</span></p>
 					<p class="mySpecialty">Front-end разработчик</p>
 				</div>
-		</div>
-		<section class="secondScreen section mydiv" id="secondScreen">
+		</section>
+		<section class="secondScreen section">
 				<h3>
 					Кто я 
 				</h3>
@@ -99,7 +98,7 @@
 					Учусь быстро и самостоятельно. Общительный. Английский — pre-intermediate, но посещаю курсы. Цель на сегодня — найти команду, где я смогу быть полезным и эффективным
 				</p>
 		</section>
-		<section class="thirdScreen  elem section mydiv" id="thirdScreen">
+		<section class="thirdScreen section ">
 				<h3 >
 					Сухие факты
 				</h3>
@@ -143,7 +142,7 @@
 					</div>
 				</div>
 		</section>
-		<section class="fourthScreen section mydiv" id="fourthScreen">
+		<section class="fourthScreen section">
 				<h3>
 					Мои скилы
 				</h3>
@@ -163,20 +162,37 @@
 					<p><span>&#8212;</span>JavaScript (Basic)</p>
 				</div>
 		</section>
-<!-- 		<section class="fifthScreen section mydiv" id="fifthScreen">
+		<section class="fifthScreen section">
 				<h3>
 					Мои работы
 				</h3>
-				<h2>
-					Dance with me
-				</h2>
-		</section> -->
-		<footer class="section mydiv" id="footer">
+				<div class="loop owl-carousel owl-theme owl-loaded owl-drag">
+					<div class="item">
+						<h2 class="jobName">DANCE WITH ME</h2>
+						<a class="densLessons" href="#">
+							<img src="foto/densLessonsDT.png">
+						</a>
+					</div>
+					<div class="item">
+						<h2 class="jobName">WORKOUT WITH ME</h2>
+						<a href="#">
+							<img class="FitnesMobile" src="foto/fitnessDT.png">
+						</a>
+					</div>
+					<div class="item">
+						<h2 class="jobName">LEADER NRG UKRAINE</h2>
+						<a href="#">
+							<img src="foto/nrgDT.png">
+						</a>
+					</div>
+				</div>
+		</section>
+		<section class="section">
 				<h3>
 					Контакты
 				</h3>
 				<h2>
-					Надеюсь на <span>дальнейшее</span> сотрудничество
+					Надеюсь на  <span>дальнейшее </span> сотрудничество
 				</h2>
 				<div class="contactWrapper">
 					<p class="my number">
@@ -197,43 +213,24 @@
 						</li>
 					</ul>
 				</div>
-		</footer>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		</section>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+	<script src="js/fullpageScroll.js"></script>
+	<script src="js/owl.carousel.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function(){
-    		if ($(window).width() > 900){	
-				$(function() {
-				  var divs = $('.mydiv');
-				  var div = 0;
-				  div = -1
-				  divs.each(function(i) {
-				    if (div < 0 && ($(this).offset().top >=$(window).scrollTop())) {
-				        div = i;
-				    }
-				  });
-				  $(window).on('mousewheel DOMMouseScroll', function(e) {
-				    if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-				      if (div > 0) {
-				        div--;
-				      }
-				    } else {
-				      if (div < divs.length) {
-				        div++;
-				      }
-				    }
-				    $('html,body').stop().animate({
-				      scrollTop: divs.eq(div).offset().top
-				    }, 200);
-				    return false;
-				  });
-				  $(window).resize(function() {
-				    $('html,body').scrollTop(divs.eq(div).offset().top);
-				  });
-				});
-			}
+		$('.loop').owlCarousel({
+		    center: true,
+		    items:1,
+		    loop:true,
+		    margin:10,
+		    responsive:{
+		        0:{
+		            items:1
+		        }
+		    }
 		});
-
 	</script>
 	<script type="text/javascript">
 		function scrollTracking(){
