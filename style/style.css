@@ -369,8 +369,8 @@ a{
 		position: relative;
 	}
 /*secondScreen*/
-	section{
-		padding: 20px 0;
+	.section{
+		padding: 40px 0;
 		width: 90%;
 		margin: 0 auto;
 	}
@@ -415,6 +415,9 @@ a{
 		padding: 0 15px 0 55px;
 	}
 /*thirdScreen*/
+	.ForStudi {
+	    padding: 0 0 25px 55px;
+	}
 	.study{
 		border-left: 1px solid black;
 		padding: 5px 0 45px 24px;
@@ -454,7 +457,8 @@ a{
 		font-weight: 500;
 		font-size: 16px;
 		line-height: 142.3%;
-		padding: 0 0 25px 55px;
+		padding: 0 0 25px 0;
+		max-width: 450px;
 	}
 /*fourthScreen*/
 	.fourthScreen p{
@@ -466,12 +470,42 @@ a{
 	.fourthScreen p span{
 		padding: 0 16px 0 24px;
 	}
-/*footer*/
-	footer{
-		padding: 20px 0 90px;
-		width: 90%;
-		margin: 0 auto;
+/*fifthScreen*/
+	.owl-carousel .owl-item img {
+			display: block;
+			box-shadow: 0px 4px 20px rgba(150, 150, 150, 0.25);
 	}
+	.owl-dot{
+		width: 25%;
+		height: 1px;
+		background: #EBEBEB;
+	}
+	.owl-dots .active{
+		background-color: black;
+	}
+	.jobName{
+		position: relative;
+	    left: 40px;
+	    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	    opacity: 0;
+	    -moz-transition-delay: 240ms;
+	    -o-transition-delay: 240ms;
+	    -webkit-transition-delay: 240ms;
+	    transition-delay: 240ms;
+	    -moz-transition: all 960ms cubic-bezier(0.16, 0.01, 0.77, 1);
+	    -o-transition: all 960ms cubic-bezier(0.16, 0.01, 0.77, 1);
+	    -webkit-transition: all 960ms cubic-bezier(0.16, 0.01, 0.77, 1);
+	    transition: all 960ms cubic-bezier(0.16, 0.01, 0.77, 1);
+	}
+	.owl-item.active .jobName{
+		-moz-transform: translateX(-40px);
+	    -ms-transform: translateX(-40px);
+	    -webkit-transform: translateX(-40px);
+	    transform: translateX(-40px);
+	    opacity: 1;
+	}
+
+/*footer*/
 	.my{
 		font-family: "Montserrat";
 		font-weight: 500;
@@ -514,6 +548,12 @@ a{
 		background-position: -42px -26px;
 	}
 @media(min-width: 900px){
+	.owl-carousel .owl-item img{
+		width: 60%;
+	}
+	.imgFitnes{
+
+	}
 	.section{
 		height: calc(100vh - 160px);
 		position: relative;
@@ -578,7 +618,10 @@ a{
 		font-weight: 900;
 		font-size: 50px;
 		line-height: 45px;
-		padding: 15px 0 50px;
+		padding: 15px 0 40px;
+	}
+	.ForStudi {
+    	padding: 0 0 0 100px;
 	}
 	.secondScreen p{
 		font-size: 18px;
@@ -589,17 +632,14 @@ a{
 		display: -ms-flexbox;
 		display: flex;
 	}
-	.ForStudi{
-		padding: 35px 0;
-	}
 	.study{
 		border-top: 1px solid black;
-		padding: 26px 130px 0 0;
+		padding: 26px 60px 0 0;
 		border-left: none;
 		margin: 0;
 	}
 	.study:last-child {
-    padding: 26px 100px 0 0px;
+    padding: 26px 60px 0 0px;
 	}
 	.study:before{
 		    margin: -9px 0 0 0px;
@@ -624,11 +664,14 @@ a{
 		line-height: 66px;
 	}
 	.ForStudi{
-		padding: 35px 0 0 100px;
+		padding: 0 0 0 100px;
 	}
 	.section{
-		height: calc(100vh - 280px);
+		height: calc(100vh - 200px);
 		position: relative;
-		padding: 140px 0;
+		padding: 100px 0;
+	}
+		.owl-carousel .owl-item img{
+		width: 50%;
 	}
 }
